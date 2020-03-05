@@ -33,6 +33,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/button_remove_player"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -50,6 +51,7 @@
                 android:textSize="100dp"/>
 
             <Button
+                android:id="@+id/button_add_player"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -71,6 +73,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/button_startinglife_20"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -78,6 +81,7 @@
                 android:textSize="20dp"/>
 
             <Button
+                android:id="@+id/button_startinglife_30"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -85,6 +89,7 @@
                 android:textSize="20dp"/>
 
             <Button
+                android:id="@+id/button_startinglife_40"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
