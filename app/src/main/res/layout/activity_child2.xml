@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".ChildActivity2">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_resultado_num_jogadores"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NUM JOGADORES"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_resultado_starting_life"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIDA"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/button_back_to_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar para a tela inicial" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/parent_modules"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

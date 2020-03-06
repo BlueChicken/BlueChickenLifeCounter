@@ -2,8 +2,12 @@ package com.example.bluechickenlifecounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class ChildActivity2 extends AppCompatActivity {
 
@@ -11,6 +15,33 @@ public class ChildActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child2);
+
+        TextView tv_resultadoVidaInicial = findViewById(R.id.tv_resultado_starting_life);
+        TextView tv_resultadoNumJogadores = findViewById(R.id.tv_resultado_num_jogadores);
+
+        Intent intent = getIntent();
+
+
+        tv_resultadoNumJogadores.setText(Integer.toString(intent.getIntExtra("numJogadores", 0)));
+
+        tv_resultadoVidaInicial.setText(Integer.toString(intent.getIntExtra("vidaInicial", 0)));
+
+        Button button_backToMain = (Button) findViewById(R.id.button_back_to_main);
+        button_backToMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+        LinearLayout parentModules = findViewById(R.id.parent_modules);
+
+        parentModules.addView(findViewById(R.id.module));
+
+
+
+
     }
 
     @Override
