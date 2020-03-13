@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -21,10 +22,13 @@ public class ChildActivity2 extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        int numJogadores = intent.getIntExtra("numJogadores", 0);
+        int vidaInicial = intent.getIntExtra("vidaInicial", 0);
 
-        tv_resultadoNumJogadores.setText(Integer.toString(intent.getIntExtra("numJogadores", 0)));
 
-        tv_resultadoVidaInicial.setText(Integer.toString(intent.getIntExtra("vidaInicial", 0)));
+        tv_resultadoNumJogadores.setText(Integer.toString(numJogadores));
+
+        tv_resultadoVidaInicial.setText(Integer.toString(vidaInicial));
 
         Button button_backToMain = (Button) findViewById(R.id.button_back_to_main);
         button_backToMain.setOnClickListener(new View.OnClickListener() {
@@ -35,9 +39,21 @@ public class ChildActivity2 extends AppCompatActivity {
         });
 
 
-        LinearLayout parentModules = findViewById(R.id.parent_modules);
+        LinearLayout layout_moduleParent = findViewById(R.id.parent_modules);
 
-        parentModules.addView(findViewById(R.id.module));
+        LayoutInflater layoutInflater = getLayoutInflater();
+
+        /*
+
+
+        View module = getLayoutInflater().inflate(R.layout.test_module, null);
+        layout_moduleParent.addView(module);
+        */
+
+        for (int i = 0; i < numJogadores; i++) {
+            View module = layoutInflater.inflate(R.layout.test_module, layout_moduleParent);
+            System.out.println(Integer.toString(i));
+        }
 
 
 
